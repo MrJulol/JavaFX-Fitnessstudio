@@ -8,22 +8,22 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.fitnessstudiomanagement.Controllers.ClientViewController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.fitnessstudiomanagement.Controllers.ClientViewController">
    <children>
       <SplitPane dividerPositions="0.9045226130653267" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
                <children>
                   <SplitPane dividerPositions="0.29797979797979796" prefHeight="357.0" prefWidth="598.0">
                      <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
                            <children>
                               <Button layoutX="45.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCheckinButtonPressed" prefHeight="25.0" prefWidth="85.0" text="Check in" />
                               <ListView fx:id="CheckinListView" layoutX="1.0" layoutY="40.0" prefHeight="272.0" prefWidth="175.0" />
                               <Label fx:id="counter" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="142.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
                            <children>
                               <Label fx:id="name" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="391.0" />
                               <Label fx:id="expDate" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="391.0" />
@@ -33,7 +33,7 @@
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
                <children>
                   <Button layoutX="532.0" layoutY="5.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Logout" />
                   <MenuButton layoutX="20.0" layoutY="5.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">

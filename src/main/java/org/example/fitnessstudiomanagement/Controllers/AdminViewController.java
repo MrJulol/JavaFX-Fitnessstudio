@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import org.example.fitnessstudiomanagement.Data.Data;
 import org.example.fitnessstudiomanagement.Data.Database;
 import org.example.fitnessstudiomanagement.Enums.SceneType;
 
@@ -34,7 +35,8 @@ public class AdminViewController implements Initializable {
         SceneManager.getInstance().switchScene(SceneType.LOGIN);
     }
     public void onDarkMode(){
-
+        Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.ADMIN);
     }
 
 

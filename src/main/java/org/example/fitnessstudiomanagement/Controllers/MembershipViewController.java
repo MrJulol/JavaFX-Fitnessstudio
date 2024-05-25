@@ -27,7 +27,8 @@ public class MembershipViewController implements Initializable {
         SceneManager.getInstance().switchScene(SceneType.ADMIN);
     }
     public void onDarkMode(){
-
+        Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.MEMBERSHIP);
     }
 
 

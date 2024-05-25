@@ -79,6 +79,7 @@ public class LoginController {
         alert.showAndWait();
     }
     public void onDarkMode(){
-
+        Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.LOGIN);
     }
 }

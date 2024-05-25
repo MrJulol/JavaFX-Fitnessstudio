@@ -98,6 +98,7 @@ public class RegisterController {
         alert.showAndWait();
     }
     public void onDarkMode(){
-
+        Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.REGISTER);
     }
 }

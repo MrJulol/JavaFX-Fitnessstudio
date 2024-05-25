@@ -29,6 +29,7 @@ public class ClientViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         name.setText("Welcome Back "+Data.loggedOnAccount.getName());
         expDate.setText("Expiration Date: "+Data.loggedOnAccount.getMembership().getExpirationDate().toString());
+        counter.setText("Number of Logins: "+Data.loggedOnAccount.getCheckinNr());
     }
     public void onCheckinButtonPressed(ActionEvent actionEvent) {
         Data.loggedOnAccount.setCheckinNr(Data.loggedOnAccount.getCheckinNr()+1);
@@ -45,5 +46,6 @@ public class ClientViewController implements Initializable {
     }
     public void onDarkMode(){
         Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.CLIENT);
     }
 }

@@ -42,6 +42,7 @@ public class SceneManager {
 
             throw new RuntimeException(e);
         }
+        if(!Data.isDarkMode)scene.getStylesheets().add(getClass().getResource("dark.css").toExternalForm());
         this.switchScene(scene);
     }
 
