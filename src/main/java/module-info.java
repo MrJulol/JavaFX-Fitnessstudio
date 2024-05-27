@@ -17,4 +17,6 @@ module org.example.fitnessstudiomanagement {
     opens org.example.fitnessstudiomanagement.Model to javafx.fxml;
     exports org.example.fitnessstudiomanagement.Enums;
     opens org.example.fitnessstudiomanagement.Enums to javafx.fxml;
+    exports org.example.fitnessstudiomanagement.Languages;
+    opens org.example.fitnessstudiomanagement.Languages to javafx.fxml;
 }

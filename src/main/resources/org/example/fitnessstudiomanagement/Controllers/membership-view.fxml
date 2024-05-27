@@ -18,14 +18,14 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button layoutX="540.0" layoutY="9.0" mnemonicParsing="false" onAction="#onRetrunButtonPressed" text="Return" />
-                  <MenuButton layoutX="14.0" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
+                  <Button fx:id="logout" layoutX="511.0" layoutY="9.0" mnemonicParsing="false" onAction="#onRetrunButtonPressed" prefHeight="25.0" prefWidth="73.0" text="Return" />
+                  <MenuButton fx:id="settings" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
-                        <MenuItem mnemonicParsing="false" text="English" />
-                        <MenuItem mnemonicParsing="false" text="Italiano" />
-                        <MenuItem mnemonicParsing="false" text="Deutsch" />
-                     </items>
+                     <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" fx:id="darkMode"/>
+                     <MenuItem mnemonicParsing="false" onAction="#onEnglish" text="English" />
+                     <MenuItem mnemonicParsing="false" onAction="#onItalian" text="Italiano" />
+                     <MenuItem mnemonicParsing="false" onAction="#onGerman" text="Deutsch" />
+                  </items>
                   </MenuButton>
                </children>
             </AnchorPane>

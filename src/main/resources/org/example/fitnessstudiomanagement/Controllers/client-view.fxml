@@ -2,11 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.fitnessstudiomanagement.Controllers.ClientViewController">
    <children>
@@ -14,19 +16,27 @@
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
                <children>
-                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="357.0" prefWidth="598.0">
+                  <SplitPane dividerPositions="0.398" prefHeight="357.0" prefWidth="598.0">
                      <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="224.0" SplitPane.resizableWithParent="false">
                            <children>
-                              <Button layoutX="45.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCheckinButtonPressed" prefHeight="25.0" prefWidth="85.0" text="Check in" />
-                              <ListView fx:id="CheckinListView" layoutX="1.0" layoutY="40.0" prefHeight="272.0" prefWidth="175.0" />
+                              <Button fx:id="checkin" layoutX="75.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCheckinButtonPressed" prefHeight="25.0" prefWidth="85.0" text="Check in" />
                               <Label fx:id="counter" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="142.0" />
+                              <Label fx:id="motiv" layoutX="23.0" layoutY="90.0" prefHeight="69.0" prefWidth="193.0" text="Label" />
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
                            <children>
-                              <Label fx:id="name" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="391.0" />
+                              <Label fx:id="name" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="391.0">
+                                 <font>
+                                    <Font name="Avenir Black" size="13.0" />
+                                 </font></Label>
                               <Label fx:id="expDate" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="391.0" />
+                              <ImageView fx:id="LogoImage" fitHeight="296.0" fitWidth="371.0" layoutX="30.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/Logo.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                      </items>
@@ -35,13 +45,13 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Button layoutX="532.0" layoutY="5.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Logout" />
-                  <MenuButton layoutX="20.0" layoutY="5.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
+                  <Button fx:id="logout" layoutX="506.0" layoutY="5.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Logout" />
+                  <MenuButton fx:id="settings" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
-                        <MenuItem mnemonicParsing="false" text="English" />
-                        <MenuItem mnemonicParsing="false" text="Italiano" />
-                        <MenuItem mnemonicParsing="false" text="Deutsch" />
+                        <MenuItem fx:id="darkMode" mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
+                        <MenuItem mnemonicParsing="false" onAction="#onEnglish" text="English" />
+                        <MenuItem mnemonicParsing="false" onAction="#onItalian" text="Italiano" />
+                        <MenuItem mnemonicParsing="false" onAction="#onGerman" text="Deutsch" />
                      </items>
                   </MenuButton>
                </children>

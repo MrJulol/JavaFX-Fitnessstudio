@@ -21,13 +21,13 @@
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
                               <ListView fx:id="clientList" layoutX="-1.0" layoutY="31.0" prefHeight="278.0" prefWidth="200.0" />
-                              <Label alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Your Clients" />
+                              <Label fx:id="your_clients" alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Your Clients" />
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <ImageView fitHeight="353.0" fitWidth="392.0">
-                                 <Image url="@Logo.png" />
+                              <ImageView fx:id="LogoImage" fitHeight="353.0" fitWidth="392.0">
+                                 <Image url="@Images/Logo.png" />
                               </ImageView>
                            </children>
                         </AnchorPane>
@@ -37,17 +37,18 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <MenuButton layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
+                  <MenuButton fx:id="settings" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
-                        <MenuItem mnemonicParsing="false" text="English" />
-                        <MenuItem mnemonicParsing="false" text="Italiano" />
-                        <MenuItem mnemonicParsing="false" text="Deutsch" />
+                        <MenuItem fx:id="darkMode" mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
+                        <MenuItem mnemonicParsing="false" onAction="#onEnglish" text="English" />
+                        <MenuItem mnemonicParsing="false" onAction="#onItalian" text="Italiano" />
+                        <MenuItem mnemonicParsing="false" onAction="#onGerman" text="Deutsch" />
                      </items>
                   </MenuButton>
-                  <Button layoutX="108.0" layoutY="6.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" text="Register new User" />
-                  <Button layoutX="233.0" layoutY="6.0" mnemonicParsing="false" onAction="#onMembershipButtonPressed" text="Membership" />
-                  <Button layoutX="530.0" layoutY="6.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Logout" />
+                  <Button fx:id="register" layoutX="108.0" layoutY="6.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" text="Register new User" />
+                  <Button fx:id="membership" layoutX="233.0" layoutY="6.0" mnemonicParsing="false" onAction="#onMembershipButtonPressed" text="Membership" />
+                  <Button fx:id="logout" layoutX="509.0" layoutY="6.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Logout" />
+                  <Button layoutX="456.0" layoutY="6.0" mnemonicParsing="false" onAction="#logStatisticsToFile" text="Logs" />
                </children>
             </AnchorPane>
          </items>

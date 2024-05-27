@@ -33,23 +33,23 @@
             <TextField fx:id="name" prefHeight="12.0" prefWidth="529.0" promptText="Max Mustermann" GridPane.columnIndex="1" />
             <TextField fx:id="phone" promptText="333 331 4543" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <DatePicker fx:id="birthDate" prefHeight="0.0" prefWidth="416.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onRegisterButtonPressed" text="Continue" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="131.0" text="Name and Surname" textAlignment="CENTER" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="140.0" text="Password" GridPane.rowIndex="1" />
+            <Button fx:id="contB" alignment="CENTER" mnemonicParsing="false" onAction="#onRegisterButtonPressed" text="Continue" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label fx:id="namelb" alignment="CENTER" prefHeight="17.0" prefWidth="131.0" text="Name and Surname" textAlignment="CENTER" />
+            <Label fx:id="passlb" alignment="CENTER" prefHeight="17.0" prefWidth="140.0" text="Password" GridPane.rowIndex="1" />
             <PasswordField fx:id="passwordInit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="135.0" text="Phone Number" GridPane.rowIndex="3" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Date of Birth" GridPane.rowIndex="5" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="157.0" text="Address" GridPane.rowIndex="4" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="139.0" text="Conform Password" GridPane.rowIndex="2" />
+            <Label fx:id="phonelb" alignment="CENTER" prefHeight="17.0" prefWidth="135.0" text="Phone Number" GridPane.rowIndex="3" />
+            <Label fx:id="bdaylb" alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Date of Birth" GridPane.rowIndex="5" />
+            <Label fx:id="addlb" alignment="CENTER" prefHeight="17.0" prefWidth="157.0" text="Address" GridPane.rowIndex="4" />
+            <Label fx:id="passlb2" alignment="CENTER" prefHeight="17.0" prefWidth="139.0" text="Conform Password" GridPane.rowIndex="2" />
             <PasswordField fx:id="passwordConfirm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="address" promptText="Musterstraße 14, 39030" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings" GridPane.rowIndex="6">
+            <Button fx:id="cancel" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <MenuButton fx:id="settings" alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="87.0" text="Settings" GridPane.rowIndex="6">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" />
-                  <MenuItem mnemonicParsing="false" text="English" />
-                  <MenuItem mnemonicParsing="false" text="Italiano" />
-                  <MenuItem mnemonicParsing="false" text="Deutsch" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDarkMode" text="Dark-Mode" fx:id="darkMode"/>
+                  <MenuItem mnemonicParsing="false" onAction="#onEnglish" text="English" />
+                  <MenuItem mnemonicParsing="false" onAction="#onItalian" text="Italiano" />
+                  <MenuItem mnemonicParsing="false" onAction="#onGerman" text="Deutsch" />
                </items>
             </MenuButton>
          </children>

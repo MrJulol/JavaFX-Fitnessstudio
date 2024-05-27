@@ -1,12 +1,13 @@
 package org.example.fitnessstudiomanagement.Data;
 
-import javafx.scene.control.ListView;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import org.example.fitnessstudiomanagement.Enums.LanguageKey;
 import org.example.fitnessstudiomanagement.Helper.Encrypt;
 import org.example.fitnessstudiomanagement.Model.Account;
 
 public class Data {
+
+    public static LanguageKey language = LanguageKey.ENGLISH;
 
     public static boolean isDarkMode = false;
 

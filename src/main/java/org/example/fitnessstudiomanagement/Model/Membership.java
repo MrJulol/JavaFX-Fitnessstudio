@@ -17,10 +17,11 @@ public class Membership {
         return expirationDate;
     }
 
-    public void setExpirationDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
-    }
     public String name() {
         return type.name();
+    }
+
+    public MembershipType getType() {
+        return type;
     }
 }

@@ -2,19 +2,41 @@ package org.example.fitnessstudiomanagement.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import org.example.fitnessstudiomanagement.Data.Data;
 import org.example.fitnessstudiomanagement.Data.Database;
+import org.example.fitnessstudiomanagement.Enums.LanguageKey;
 import org.example.fitnessstudiomanagement.Enums.MembershipType;
 import org.example.fitnessstudiomanagement.Enums.SceneType;
+import org.example.fitnessstudiomanagement.Enums.TranslationKey;
 import org.example.fitnessstudiomanagement.Helper.Encrypt;
 import org.example.fitnessstudiomanagement.Helper.Validation;
+import org.example.fitnessstudiomanagement.Languages.LanguageDatabase;
 import org.example.fitnessstudiomanagement.Model.Account;
 
-public class RegisterController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class RegisterController implements Initializable {
+    @FXML
+    public Button contB;
+    @FXML
+    public Label namelb;
+    @FXML
+    public Label passlb;
+    @FXML
+    public Label phonelb;
+    @FXML
+    public Label bdaylb;
+    @FXML
+    public Label addlb;
+    @FXML
+    public Label passlb2;
+    @FXML
+    public Button cancel;
+    @FXML
+    public MenuButton settings;
 
     @FXML
     private TextField name;
@@ -28,6 +50,26 @@ public class RegisterController {
     private PasswordField passwordInit;
     @FXML
     private PasswordField passwordConfirm;
+    @FXML
+    private MenuItem darkMode;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        if(Data.isDarkMode){
+            darkMode.setText("Light-Mode");
+        }
+
+        contB.setText(LanguageDatabase.getInstance().get(TranslationKey.OK));
+        namelb.setText(LanguageDatabase.getInstance().get(TranslationKey.REG_NAME));
+        phonelb.setText(LanguageDatabase.getInstance().get(TranslationKey.REG_PHONE));
+        bdaylb.setText(LanguageDatabase.getInstance().get(TranslationKey.REG_DATE));
+        addlb.setText(LanguageDatabase.getInstance().get(TranslationKey.REG_ADDRESS));
+        passlb.setText(LanguageDatabase.getInstance().get(TranslationKey.PASSWORD));
+        passlb2.setText(LanguageDatabase.getInstance().get(TranslationKey.PASSWORD));
+        cancel.setText(LanguageDatabase.getInstance().get(TranslationKey.CANCEL));
+        settings.setText(LanguageDatabase.getInstance().get(TranslationKey.SETTINGS));
+    }
 
     public void onReturnButtonPressed(){
         SceneManager.getInstance().switchScene(SceneType.ADMIN);
@@ -99,6 +141,18 @@ public class RegisterController {
     }
     public void onDarkMode(){
         Data.isDarkMode = !Data.isDarkMode;
+        SceneManager.getInstance().switchScene(SceneType.LOGIN);
+    }
+    public void onItalian(){
+        Data.language = LanguageKey.ITALIAN;
+        SceneManager.getInstance().switchScene(SceneType.REGISTER);
+    }
+    public void onGerman(){
+        Data.language = LanguageKey.GERMAN;
+        SceneManager.getInstance().switchScene(SceneType.REGISTER);
+    }
+    public void onEnglish(){
+        Data.language = LanguageKey.ENGLISH;
         SceneManager.getInstance().switchScene(SceneType.REGISTER);
     }
 }

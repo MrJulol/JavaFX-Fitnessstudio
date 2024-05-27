@@ -185,7 +185,6 @@ public class Database {
                     String membershipType = resultSet.getString("membershipType");
                     MembershipType membershipTypeEnum = MembershipType.valueOf(membershipType);
                     String expDate = resultSet.getString("expDate");
-                    System.out.println(expDate);
                     Account account = new Account(name, address, telNumber, birthDate, pass, membershipTypeEnum, expDate);
                     account.setCheckinNr(checkinStat);
                     this.accounts.add(account);

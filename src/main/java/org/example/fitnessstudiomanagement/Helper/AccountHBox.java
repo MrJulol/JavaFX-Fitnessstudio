@@ -8,10 +8,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import org.example.fitnessstudiomanagement.Controllers.SceneManager;
-import org.example.fitnessstudiomanagement.Data.Data;
 import org.example.fitnessstudiomanagement.Data.Database;
 import org.example.fitnessstudiomanagement.Enums.MembershipType;
 import org.example.fitnessstudiomanagement.Enums.SceneType;
+import org.example.fitnessstudiomanagement.Enums.TranslationKey;
+import org.example.fitnessstudiomanagement.Languages.LanguageDatabase;
 import org.example.fitnessstudiomanagement.Model.Account;
 
 public class AccountHBox {
@@ -19,7 +20,7 @@ public class AccountHBox {
         HBox box = new HBox();
         box.setSpacing(10);
 
-        Button deleteUser = new Button("Delete User");
+        Button deleteUser = new Button(LanguageDatabase.getInstance().get(TranslationKey.DELETE));
         deleteUser.setOnAction(e -> {
             Database.getDatabase().removeAccount(account);
             SceneManager.getInstance().switchScene(SceneType.MEMBERSHIP);
@@ -30,20 +31,20 @@ public class AccountHBox {
         membership.setText(account.getMembership().name());
         membership.setMinWidth(120);
 
-        MenuItem yearly = new MenuItem("Yearly");
+        MenuItem yearly = new MenuItem(LanguageDatabase.getInstance().get(TranslationKey.YEARLY));
         yearly.setOnAction(e -> {
             account.changeMembership(MembershipType.YEARLY);
             membership.setText(account.getMembership().name());
             expDate.setText(account.getMembership().getExpirationDate().toString());
         });
 
-        MenuItem monthly = new MenuItem("Monthly");
+        MenuItem monthly = new MenuItem(LanguageDatabase.getInstance().get(TranslationKey.MONTHLY));
         monthly.setOnAction(e -> {
             account.changeMembership(MembershipType.MONTHLY);
             membership.setText(account.getMembership().name());
             expDate.setText(account.getMembership().getExpirationDate().toString());
         });
-        MenuItem quarterly = new MenuItem("Quarterly");
+        MenuItem quarterly = new MenuItem(LanguageDatabase.getInstance().get(TranslationKey.QUARTERLY));
         quarterly.setOnAction(e -> {
             account.changeMembership(MembershipType.QUARTERLY);
             membership.setText(account.getMembership().name());

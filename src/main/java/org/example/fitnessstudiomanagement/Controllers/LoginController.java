@@ -2,25 +2,62 @@ package org.example.fitnessstudiomanagement.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.example.fitnessstudiomanagement.Data.Database;
+import org.example.fitnessstudiomanagement.Enums.LanguageKey;
 import org.example.fitnessstudiomanagement.Enums.SceneType;
+import org.example.fitnessstudiomanagement.Enums.TranslationKey;
 import org.example.fitnessstudiomanagement.Helper.Encrypt;
 import org.example.fitnessstudiomanagement.Helper.Validation;
 import org.example.fitnessstudiomanagement.Data.Data;
+import org.example.fitnessstudiomanagement.Languages.LanguageDatabase;
 import org.example.fitnessstudiomanagement.Model.Account;
 
+import java.io.File;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 
-public class LoginController {
+public class LoginController implements Initializable {
 
+    @FXML
+    public MenuButton settings;
+    @FXML
+    public Label username;
+    @FXML
+    public Label password;
+    @FXML
+    public Button login;
     @FXML
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
+    @FXML
+    private ImageView LogoImage;
+    @FXML
+    private MenuItem darkMode;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        if(Data.isDarkMode){
+            File file = new File("src/main/resources/org/example/fitnessstudiomanagement/Controllers/Images/Logo2.png");
+            Image image = new Image(file.toURI().toString());
+            LogoImage.setImage(image);
+
+            darkMode.setText("Light-Mode");
+        }
+
+        settings.setText(LanguageDatabase.getInstance().get(TranslationKey.SETTINGS));
+        username.setText(LanguageDatabase.getInstance().get(TranslationKey.USERNAME));
+        password.setText(LanguageDatabase.getInstance().get(TranslationKey.PASSWORD));
+        login.setText(LanguageDatabase.getInstance().get(TranslationKey.LOGIN));
+    }
+
 
     public void onLoginButtonClick(ActionEvent actionEvent) {
         String username = usernameField.getText();
@@ -46,7 +83,6 @@ public class LoginController {
 
     private boolean checkUserForClient(String username, String pass) {
         Account tryLogin = Database.getDatabase().findAccountByUsername(username);
-        System.out.println("here");
         if (tryLogin == null) {
             showAlert("Invalid username or password");
             return false;
@@ -82,4 +118,18 @@ public class LoginController {
         Data.isDarkMode = !Data.isDarkMode;
         SceneManager.getInstance().switchScene(SceneType.LOGIN);
     }
+    public void onItalian(){
+        Data.language = LanguageKey.ITALIAN;
+        SceneManager.getInstance().switchScene(SceneType.LOGIN);
+    }
+    public void onGerman(){
+        Data.language = LanguageKey.GERMAN;
+        SceneManager.getInstance().switchScene(SceneType.LOGIN);
+    }
+    public void onEnglish(){
+        Data.language = LanguageKey.ENGLISH;
+        SceneManager.getInstance().switchScene(SceneType.LOGIN);
+    }
+
+
 }

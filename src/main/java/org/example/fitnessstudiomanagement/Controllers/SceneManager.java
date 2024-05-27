@@ -6,6 +6,7 @@ import org.example.fitnessstudiomanagement.Data.Data;
 import org.example.fitnessstudiomanagement.Enums.SceneType;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class SceneManager {
     private static SceneManager instance;
@@ -42,7 +43,7 @@ public class SceneManager {
 
             throw new RuntimeException(e);
         }
-        if(!Data.isDarkMode)scene.getStylesheets().add(getClass().getResource("dark.css").toExternalForm());
+        if(Data.isDarkMode)scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("dark.css")).toExternalForm());
         this.switchScene(scene);
     }
 

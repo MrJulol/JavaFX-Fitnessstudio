@@ -1,51 +1,83 @@
 #rootPane {
-    -fx-background-color: #262b2b;
+    -fx-background-color: #181f2b;
 }
 
 .split-pane {
-    -fx-background-color: #262b2b;
+    -fx-background-color: #181f2b;
 }
 
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: #272d3f;
+}
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: #272d3f;
+}
 
 .list-view .list-cell:even{
-    -fx-background-color: #657599;
+    -fx-background-color: #181f2b;
     -fx-text-fill: #FFFFFF;
 }
 .list-view .list-cell:odd{
-    -fx-background-color: #657599;
+    -fx-background-color: #181f2b;
     -fx-text-fill: #FFFFFF;
 }
 .separator {
-    -fx-background-color: #272d3f;
+    -fx-background-color: #181f2b;
     -fx-border-color: null;
 }
 
 .text-field {
-    -fx-border-color: #657599;
-    -fx-background-color: #657599;
+    -fx-border-color: #181f2b;
+    -fx-background-color: #272d3f;
     -fx-text-fill: #FFFFFF;
 }
 
 .password-field {
-    -fx-border-color: #657599;
-    -fx-background-color: #657599;
+    -fx-border-color: #181f2b;
+    -fx-background-color: #272d3f;
     -fx-text-fill: #FFFFFF;
 }
 
 .button {
-    -fx-background-color: #657599; /* Green background color */
+    -fx-background-color: #272d3f; /* Green background color */
     -fx-text-fill: #FFFFFF;
 }
 .label {
     -fx-text-fill: #ffffff;
 }
 .menu-button {
-    -fx-background-color: #657599;
-    -fx-border-color: #657599;
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
+    -fx-text-fill: #FFFFFF;
+}
+.menu-button:focused {
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
+    -fx-text-fill: #FFFFFF;
+}
+.menu-button .menu-item{
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
     -fx-text-fill: #FFFFFF;
 }
 .menu-item {
-    -fx-background-color: #657599;
-    -fx-border-color: #657599;
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
+    -fx-text-fill: #FFFFFF;
+}
+.menu-item:focused {
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
+    -fx-text-fill: #FFFFFF;
+}
+.split-menu-button {
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
+    -fx-text-fill: #FFFFFF;
+}
+.split-menu-button .menu-item{
+    -fx-background-color: #272d3f;
+    -fx-border-color: #272d3f;
     -fx-text-fill: #FFFFFF;
 }
